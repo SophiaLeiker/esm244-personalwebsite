@@ -1,0 +1,27 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-01-17T21:38:52-08:00"
+    },
+    {
+      "path": "blog.html",
+      "title": "Blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-01-17T22:23:12-08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Sophia Leiker",
+      "author": [],
+      "contents": "\n\n          \n          \n          mfeo\n          \n          \n          Home\n          Sophia\n          Blog\n          ☰\n          \n          \n      \n        \n          \n            \n              \n            \n              Sophia Leiker\n            \n            \n              \n                \n                    \n                      \n                        LinkedIn\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Twitter\n                      \n                    \n                  \n                                    \n                    \n                      \n                        GitHub\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Email\n                      \n                    \n                  \n                                  \n            \n          \n        \n        \n        \n          \n            Master’s candidate at UCSB’s Bren School of Environmental Science & Management, focusing on applied environmental analysis using satellite-based remote sensing data. My goal? To bridge the gap between scientists and those enacting important on-the-ground change across the globe. Collaboration at the nexus of science, policy, and economics is vital to ensure environmental strategies are effectively implemented. Looking forward to the opportunity to continue my growth as a scientist and foster interdisciplinary collaboration.\n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              Sophia Leiker\n            \n            \n              \n                \n                                    \n                    \n                      LinkedIn\n                    \n                  \n                                    \n                    \n                      Twitter\n                    \n                  \n                                    \n                    \n                      GitHub\n                    \n                  \n                                    \n                    \n                      Email\n                    \n                  \n                                  \n              \n            \n            \n              Master’s candidate at UCSB’s Bren School of Environmental Science & Management, focusing on applied environmental analysis using satellite-based remote sensing data. My goal? To bridge the gap between scientists and those enacting important on-the-ground change across the globe. Collaboration at the nexus of science, policy, and economics is vital to ensure environmental strategies are effectively implemented. Looking forward to the opportunity to continue my growth as a scientist and foster interdisciplinary collaboration.\n            \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2022-01-17T22:24:32-08:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

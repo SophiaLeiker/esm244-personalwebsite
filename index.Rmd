@@ -1,0 +1,19 @@
+---
+title: "Sophia Leiker"
+image: "sophia.jpeg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/sophia-leiker/"
+  - label: Twitter
+    url: "https://twitter.com/SophiaLeiker"
+  - label: GitHub
+    url: "https://github.com/SophiaLeiker"
+  - label: Email
+    url: "mailto:sophialeiker@bren.ucsb.com"
+output:
+  postcards::trestles
+site: distill::distill_website
+---
+ 
+Master's candidate at UCSB's Bren School of Environmental Science & Management, focusing on **applied environmental analysis using satellite-based remote sensing data**. 
+My goal? To bridge the gap between scientists and those enacting important on-the-ground change across the globe. Collaboration at the nexus of science, policy, and economics is vital to ensure environmental strategies are effectively implemented. Looking forward to the opportunity to continue my growth as a scientist and foster interdisciplinary collaboration.
