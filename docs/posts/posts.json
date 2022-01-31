@@ -1,8 +1,25 @@
 [
   {
+    "path": "posts/2022-01-30-the-sharpe-ratio/",
+    "title": "Remote Sensing and Biodversity Monitoring",
+    "description": "This post will highlight the state of remote sensing as used for monitoring, reporting and verying biodiversity as an ecosystem health metric.",
+    "author": [
+      {
+        "name": "Sophia Leiker",
+        "url": {}
+      }
+    ],
+    "date": "2022-01-30",
+    "categories": [],
+    "contents": "\nAdd some really cool info here\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-01-30T23:44:57-08:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-01-17-welcome/",
-    "title": "welcome",
-    "description": "A short description of the post.",
+    "title": "Welcome!",
+    "description": "Drop by to hear musing, thoughts and refelctions on my excitement as I explore topics related to remote sensing, ecosystem services, nature based solutions, Web3 and decentralized finance to fund ecological restoration.",
     "author": [
       {
         "name": "Sophia Leiker",
@@ -11,9 +28,9 @@
     ],
     "date": "2022-01-17",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "contents": "\nWelcome to my site!\nStick around to hear musing\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-01-17T22:36:30-08:00",
+    "last_modified": "2022-01-30T23:40:56-08:00",
     "input_file": {}
   }
 ]

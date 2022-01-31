@@ -1,11 +1,67 @@
 ---
-title: "About this site"
+title: "About Me"
 description: |
-  Some additional details about the website
+  My experiences, contributions and path to Bren
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Testing 1,2,3
+![NASA Image from Landsat 7 satellite observations](http://c.files.bbci.co.uk/16CBE/production/_106447339_17516251-low_res-earth-from-space.jpg){width=100%}
+
+
+## Regen Network Development 🌱 
+Previous Geospatial Environmental Research & Project Analyst at [Regen Network Development](https://www.regen.network/) supporting **method development and design for monitoring, reporting, and verifying ecosystem service credits** (such as carbon credits) for Regen Registry. Nature based solutions & ecological assets need to be backed by verifiable science, my role was to facilitate method and project development to ensure that each claim is backed with appropriate data and analysis leveraging blockchain technology.
+
+
+### Geospatial Environmental Researcher & Project Analyst
+
+Supporting Regen Network on the development of its global marketplace and contracting platform for Earth's ecosystem assets, services, and data.
+
+- Supported Microsoft purchase of 119,000 Carbon Credits in one of the largest-ever soil carbon credit issuances in Australia, coordinated outreach with 4 Australian ranchers, wrote thirteen 40-page monitoring reports
+- Coordinated onboarding of 5 new credit and methodology developers and supporting community engagement to streamline process for creating community governed ecosystem assets
+- Facilitated method and project development to back ecosystem service assets with appropriate data and analysis with land stewards, project developers, methodology developers and monitors
+- Supported Regen Registry program development, defining processes for onboarding and hosting external methods and ecosystem credits on the blockchain
+
+### Data Scientist & GIS Analyst
+- Co-developed 42-page [Methodology for GHG and Co-Benefits in Grazing Systems](https://regen-registry.s3.amazonaws.com/Methodology+for+GHG+and+Co-Benefits+in+Grazing+Systems.pdf), combining remote sensing data with in-field measurements to train machine learning algorithms for carbon stock estimation
+- Presented Remote Sensing Methods for Soil Carbon Accounting at Yale’s OpenLab Open Climate Collabathon
+- Developed methodologies to employ remote sensing data to track ecosystem indicators, monitor regenerative practices, and assess ecosystem health metrics
+
+***
+
+## USDA OpenTeam 🌾
+Member of two working groups within the USDA's [OpenTEAM consortium (Open Technology Ecosystem for Agricultural Management)](https://openteam.community/), which includes **45 organisations and 250 researchers, developers, and producers to develop a farmer driven, interoperable suite of tools** to provide farmers with the best possible knowledge to employ predictive analytics for decision support and soil health.
+
+- Supported judging work with the Foodicons challenge through the FAO, the Lexicon, Adobe and REGEN1. Foodicons is a not-for-profit with the stated goal to create an open source a collection of visual icons representing a global visual language of food. I judged designs related to environmental science, nutrient flows and our food system
+- Contributed to USDA’s OpenTEAM consortium (Open Tech Ecosystem for Ag Management) field methods working group assessing in-field monitoring protocols and indicators
+
+***
+
+## NASA DEVELOP 🚀 
+Prior to this, I worked as a GIS researcher and project manager for [NASA DEVELOP](https://develop.larc.nasa.gov/), a program under NASA’s Applied Sciences Division. **I employed NASA Earth observations in conjunction with remote sensing techniques to address environmental and public policy issues through interdisciplinary research**.I have participated in projects covering wildfire disaster analysis, invasive species modeling, ecological forecasting, forest management and water resources, working with both public and private stakeholders.
+
+### Assistant Center Lead
+- Presented remote sensing research findings at NASA's Annual Earth Science Application Showcase at NASA Headquarters in Washington DC
+- Partnered with The Nature Conservancy and USGS to better understand the impacts of an invasive rust disease and invasive ungulates on forest health and coastal turbidity in Moloka'i Hawaii using Landsat 8 OLI and Sentinel-2 MSI remote sensing data
+- Oversaw 3 projects, managed datasets, geo-databases, code documentation, providing technical support, overseeing various projects
+- Facilitated partner and national office interactions, co-managed 2 NASA DEVELOP nodes, refined project proposals, ran weekly meetings, hiring
+
+### Data Manager
+- Employed Earth Observations to derive 6 environmental indicies/high resolution layers to model invasive species habitat for the United States Geological Survey and NPS Exotic Plant Management Team
+- Enhanced partner’s bare ground data from 250m resolution to 10/30m resolution by utilizing Earth Observations from NASA’s Landsat 8 Operational Land Imager (30m) and the European Space Agency’s Sentinel-1 C-Band Synthetic Aperture Radar (10m)
+- Derived ecologically significant layers in Google Earth Engine and modeled in SAHM (Software for Assisted Habitat Modeling) to increase model accuracy and assess geospatial vulnerability for targeted management efforts
+- Managed datasets, databases, code documentation
+
+### Project Lead
+
+- Managed 4-person team to employ NASA and ESA remote sensing geospatial data to quantify forest mortality and burn severity 
+- Produced maps, models and tools for the Colorado State University: Natural Resource Ecology Lab, and Colorado Ranch Managers 
+- Presented findings at the High Altitude Revegetation Committee Society for Ecological Restoration - Rocky Mountain Chapter 2019 Joint Conference 
+- Utilized GIS ArcMap, Google Earth Engine and R to assess tree mortality, burn severity and species distribution models 
+- Communicated with multiple stakeholders on project objectives for product application to current management efforts
+
+***
+
+

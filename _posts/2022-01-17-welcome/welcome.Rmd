@@ -1,7 +1,7 @@
 ---
-title: "welcome"
+title: "Welcome!"
 description: |
-  A short description of the post.
+  Drop by to hear musing, thoughts and refelctions on my excitement as I explore topics related to remote sensing, ecosystem services, nature based solutions, Web3 and decentralized finance to fund ecological restoration.
 author:
   - name: Sophia Leiker
 date: 2022-01-17
@@ -15,8 +15,8 @@ output:
 knitr::opts_chunk$set(echo = FALSE) 
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
+Welcome to my site!
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+Stick around to hear musing 
 
 

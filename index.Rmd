@@ -15,5 +15,24 @@ output:
 site: distill::distill_website
 ---
  
+## Bio
+
 Master's candidate at UCSB's Bren School of Environmental Science & Management, focusing on **applied environmental analysis using satellite-based remote sensing data**. 
-My goal? To bridge the gap between scientists and those enacting important on-the-ground change across the globe. Collaboration at the nexus of science, policy, and economics is vital to ensure environmental strategies are effectively implemented. Looking forward to the opportunity to continue my growth as a scientist and foster interdisciplinary collaboration.
+My goal? To bridge the gap between scientists and those enacting important on-the-ground change across the globe. My interests include: *remote sensing, ecosystem services, nature based solutions, Web3, decentralized finance/crypto/DAOs to fund ecological restoration*.
+
+Collaboration at the nexus of science, policy, and economics is vital to ensure environmental strategies are effectively implemented. Looking forward to the opportunity to continue my growth as a scientist and foster interdisciplinary collaboration. 🌱
+
+
+## Education
+
+- Master’s of Environmental Science & Management - UC Santa Barbara (Expected 2023)
+- Bachelor of Science (BS) Environmental Science - UC Berkeley 2018
+
+## Expereince 
+
+- [Regen Network Development](https://www.regen.network/) 
+-*Geospatial Environmental Researcher & Project Analyst*
+-*Data Scientist and GIS Analyst*
+- [NASA DEVELOP](https://develop.larc.nasa.gov/)
+-*Assistant Center Lead*, *Project Lead*, *Data Manager*
+- [Summer Institute on Sustainability and Energy](https://uicsise.com/#welcome-1) *Research Fellow*
