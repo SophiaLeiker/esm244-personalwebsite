@@ -10,10 +10,11 @@
     },
     {
       "path": "blog.html",
-      "title": "Blog",
+      "title": "Projects and Blog",
+      "description": "Drop by to hear musing, thoughts and refelctions on my excitement as I explore topics related to remote sensing, ecosystem services, and nature based solutions, or check out some of the current projects I am working on.\n",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-02-18T17:38:16-08:00"
+      "last_modified": "2022-02-18T17:47:24-08:00"
     },
     {
       "path": "index.html",
