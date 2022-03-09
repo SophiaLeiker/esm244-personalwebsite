@@ -87,638 +87,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Sophia Leiker: Projects and Blog</title>
+  <title>Principal Components Analysis</title>
 
-  <meta property="description" itemprop="description" content="Drop by to hear musing, thoughts and refelctions on my excitement as I explore topics related to remote sensing, ecosystem services, and nature based solutions, or check out some of the current projects I am working on."/>
+  <meta property="description" itemprop="description" content="Principal Components Analysis for environmental and climatic variables at the country level with biplots for result interpretation."/>
 
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-03-08"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-03-08"/>
+  <meta name="article:author" content="Sophia Leiker"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Sophia Leiker: Projects and Blog"/>
+  <meta property="og:title" content="Principal Components Analysis"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Drop by to hear musing, thoughts and refelctions on my excitement as I explore topics related to remote sensing, ecosystem services, and nature based solutions, or check out some of the current projects I am working on."/>
+  <meta property="og:description" content="Principal Components Analysis for environmental and climatic variables at the country level with biplots for result interpretation."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Sophia Leiker"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Sophia Leiker: Projects and Blog"/>
-  <meta property="twitter:description" content="Drop by to hear musing, thoughts and refelctions on my excitement as I explore topics related to remote sensing, ecosystem services, and nature based solutions, or check out some of the current projects I am working on."/>
+  <meta property="twitter:title" content="Principal Components Analysis"/>
+  <meta property="twitter:description" content="Principal Components Analysis for environmental and climatic variables at the country level with biplots for result interpretation."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","listing"]}},"value":[{"type":"character","attributes":{},"value":["Projects and Blog"]},{"type":"character","attributes":{},"value":["Drop by to hear musing, thoughts and refelctions on my excitement as I explore topics related to remote sensing, ecosystem services, and nature based solutions, or check out some of the current projects I am working on.\n"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Principal Components Analysis"]},{"type":"character","attributes":{},"value":["Principal Components Analysis for environmental and climatic variables at the country level with biplots for result interpretation.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Sophia Leiker"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2022-03-08"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["data/sbc_lter_registered_stream_chemistry.csv","data/world_env_vars.csv","principal-components-analysis_files/figure-html5/unnamed-chunk-5-1.png","principal-components-analysis_files/figure-html5/unnamed-chunk-6-1.png"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2037,304 +1438,189 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="principal-components-analysis_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="principal-components-analysis_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="principal-components-analysis_files/popper-2.6.0/popper.min.js"></script>
+  <link href="principal-components-analysis_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="principal-components-analysis_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="principal-components-analysis_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="principal-components-analysis_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="principal-components-analysis_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="principal-components-analysis_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="principal-components-analysis_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Projects and Blog","description":"Drop by to hear musing, thoughts and refelctions on my excitement as I explore topics related to remote sensing, ecosystem services, and nature based solutions, or check out some of the current projects I am working on.","authors":[]}
+{"title":"Principal Components Analysis","description":"Principal Components Analysis for environmental and climatic variables at the country level with biplots for result interpretation.","authors":[{"author":"Sophia Leiker","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-03-08T00:00:00.000-08:00","citationText":"Leiker, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Sophia Leiker</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="blog.html">Projects &amp; Blog</a>
-<a href="SophiaLeiker_TAResume.pdf">Resume</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Projects and Blog">Projects and Blog</h1>
-<a href="posts/2022-03-08-biochar-for-carbon-sequestration/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 8, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sophia Leiker</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Biochar for Carbon Sequestration</h2>
-<div class="dt-tags"></div>
-<p>The use of biochar for soil carbon sequesrtration and increased crop yields have gained increased attention. This report dives into the science of biochar and it's potential to increase overal carbon uptake and storage.</p>
-</div>
-</a>
-<a href="posts/2022-03-08-biodiversity-from-space-remote-sensing-for-biodiversity-monitoring/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 8, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sophia Leiker</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Biodiversity from Space: Remote Sensing for Biodiversity Monitoring</h2>
-<div class="dt-tags"></div>
-<p>How can remote sensing and earth observations be used for biodiversity assessments as an aspect of monitoring ecosystem health?</p>
-</div>
-</a>
-<a href="posts/2022-03-08-principal-components-analysis/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 8, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sophia Leiker</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-03-08-principal-components-analysis/principal-components-analysis_files/figure-html5/unnamed-chunk-5-1.png"/>
-</div>
-<div class="description">
-<h2>Principal Components Analysis</h2>
-<div class="dt-tags"></div>
-<p>Principal Components Analysis for environmental and climatic variables at the country level with biplots for result interpretation.</p>
-</div>
-</a>
-<a href="posts/2022-02-18-binary-logistic-regression/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 18, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sophia Leiker</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-02-18-binary-logistic-regression/binary-logistic-regression_files/figure-html5/unnamed-chunk-5-1.png"/>
-</div>
-<div class="description">
-<h2>Binary Logistic Regression</h2>
-<div class="dt-tags"></div>
-<p>Binary logistic regression to test feasibility of using variables plant height (height), canopy length (length), canopy width (width), and number of green leaves (green_lvs) to classify whether a palmetto is species Serenoa repens or Sabal etonia.</p>
-</div>
-</a>
-<a href="posts/2022-02-18-nonlinear-least-squares/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 18, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sophia Leiker</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-02-18-nonlinear-least-squares/nonlinear-least-squares_files/figure-html5/unnamed-chunk-9-1.png"/>
-</div>
-<div class="description">
-<h2>Nonlinear Least Squares</h2>
-<div class="dt-tags"></div>
-<p>Emploing non linear least squares to estimate parameters of a length to weight model for lizard populations in New Mexico..</p>
-</div>
-</a>
-<a href="posts/2022-01-17-welcome/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 17, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Sophia Leiker</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Welcome!</h2>
-<div class="dt-tags"></div>
-<p>Drop by to hear musing, thoughts and refelctions on my excitement as I explore topics related to remote sensing, ecosystem services, nature based solutions, Web3 and decentralized finance to fund ecological restoration.</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Projects and Blog</h1>
+<h1>Principal Components Analysis</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Drop by to hear musing, thoughts and refelctions on my excitement as I explore topics related to remote sensing, ecosystem services, and nature based solutions, or check out some of the current projects I am working on.</p></p>
+<p><p>Principal Components Analysis for environmental and climatic variables at the country level with biplots for result interpretation.</p></p>
 </div>
 
+<div class="d-byline">
+  Sophia Leiker true 
+  
+<br/>2022-03-08
+</div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>set</span><span class='op'>(</span>echo <span class='op'>=</span> <span class='cn'>TRUE</span>, warning <span class='op'>=</span> <span class='cn'>FALSE</span>, message <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://here.r-lib.org/'>here</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/sfirke/janitor'>janitor</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/sinhrks/ggfortify'>ggfortify</a></span><span class='op'>)</span> <span class='co'># For PCA biplot</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://patchwork.data-imaginist.com'>patchwork</a></span><span class='op'>)</span>
+ 
+
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readxl.tidyverse.org'>readxl</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/yutannihilation/gghighlight/'>gghighlight</a></span><span class='op'>)</span> <span class='co'># For useful highlighting</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://lubridate.tidyverse.org'>lubridate</a></span><span class='op'>)</span> <span class='co'># For easier dates &amp; times</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://plotly-r.com'>plotly</a></span><span class='op'>)</span> <span class='co'># Interactive graphs</span>
+</code></pre>
+</div>
+</div>
+<h2 id="introduction">1. Introduction</h2>
+<p>This report will carry out a Principal Components Analysis and will create a biplot for result interpretation. The analysis will be performed on environmental and climatic variables at the country level.</p>
+<p><strong>Data Source:</strong> The data used was compiled and provided by <span class="citation" data-cites="zander_venter">@zander_venter</span> on Kaggle. “This data is all acquired through <a href="https://earthengine.google.com/">Google Earth Engine</a> where publicly available remote sensing datasets have been uploaded…Most of the data is derived by calculating the mean for each country at a reduction scale of about 10km.”</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Reading in the data</span>
+<span class='va'>world</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"_posts"</span>, <span class='st'>"2022-03-08-principal-components-analysis"</span>,<span class='st'>"data"</span>, <span class='st'>"world_env_vars.csv"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<hr />
+<h2 id="principal-component-analysis-pca">2. Principal Component Analysis (PCA)</h2>
+<ul>
+<li>Selecting variables of interest</li>
+<li>Dropping countries with variables that contained NA values</li>
+<li>Note: Dropping the NA values dropped the total number of countries included in th analysis from 243 to 188. This is done to carry out a more accurage PCA analysis as including countries with many variables with NAs might sway the final biplot (including a country with 3 of 9 vairables as well as a country with 9 of 9 variables would sway the outputs)</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#selecting columns of interest for the PCA</span>
+<span class='co'>#dropping NAs</span>
+
+<span class='va'>world_clean</span> <span class='op'>&lt;-</span> <span class='va'>world</span> <span class='op'><a href='https://rdrr.io/pkg/janitor/man/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='st'>"elevation"</span>, <span class='st'>"cropland_cover"</span>, <span class='st'>"tree_canopy_cover"</span>, <span class='st'>"isothermality"</span>, <span class='st'>"rain_mean_annual"</span>, <span class='st'>"rain_wettestMonth"</span>, <span class='st'>"temp_annual_range"</span>, <span class='st'>"wind"</span>, <span class='st'>"cloudiness"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/janitor/man/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/drop_na.html'>drop_na</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/janitor/man/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>Tree_Canopy_Cover_Percent <span class='op'>=</span> <span class='va'>tree_canopy_cover</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#creating a pca object type (for `prcomp` we can only give it numeric data! need to get rid of things that are characters)</span>
+<span class='va'>world_clean_pca</span> <span class='op'>&lt;-</span> <span class='va'>world_clean</span> <span class='op'><a href='https://rdrr.io/pkg/janitor/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/r/base/scale.html'>scale</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/janitor/man/pipe.html'>%&gt;%</a></span> <span class='co'>#rescaling</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/prcomp.html'>prcomp</a></span><span class='op'>(</span><span class='op'>)</span> <span class='co'>#doing the PCA</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># See the loadings (weighting for each principal component)</span>
+<span class='co'>#world_clean_pca$rotation</span>
+
+<span class='co'>#to see the SD</span>
+<span class='co'>#world_clean_pca$sdev</span>
+</code></pre>
+</div>
+</div>
+<p>Creating a bi-plot</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/autoplot.html'>autoplot</a></span><span class='op'>(</span><span class='va'>world_clean_pca</span>,
+         data <span class='op'>=</span> <span class='va'>world_clean</span>,
+         loadings <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='co'>#to show the arrows</span>
+         colour <span class='op'>=</span> <span class='st'>"Tree_Canopy_Cover_Percent"</span>,
+         loadings.label <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='co'>#to add the labels to the arrows</span>
+         loadings.colour <span class='op'>=</span> <span class='st'>"black"</span>,
+         loadings.label.colour <span class='op'>=</span> <span class='st'>"black"</span>,
+         loadings.label.vjust <span class='op'>=</span> <span class='op'>-</span><span class='fl'>.5</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_colour_gradient</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"chocolate2"</span>, high <span class='op'>=</span> <span class='st'>"forestgreen"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="principal-components-analysis_files/figure-html5/unnamed-chunk-5-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Biplot Illustrating Eigenvalues for Environmental and Climactic Variables"</span>, subtitle <span class='op'>=</span> <span class='st'>"Data compiled and provided by @zander_venter from Google Earth Engine"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>$title
+[1] &quot;Biplot Illustrating Eigenvalues for Environmental and Climactic Variables&quot;
+
+$subtitle
+[1] &quot;Data compiled and provided by @zander_venter from Google Earth Engine&quot;
+
+attr(,&quot;class&quot;)
+[1] &quot;labels&quot;</code></pre>
+</div>
+<p><strong>Figure 1</strong>: Biplot illustrating the eigenvalues (loading variables) for principal component 1 and principal component 2. The color scale represents tree canopy cover with orange dots representing points with low levels of tree canopy cover and forest green representing higher levels of tree canopy cover.</p>
+<hr />
+<h2 id="screeplot">2. Screeplot</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sd_vec</span> <span class='op'>&lt;-</span> <span class='va'>world_clean_pca</span><span class='op'>$</span><span class='va'>sdev</span>
+<span class='va'>var_vec</span> <span class='op'>&lt;-</span> <span class='va'>sd_vec</span><span class='op'>^</span><span class='fl'>2</span> <span class='co'># Standard deviation is sqrt of variance!</span>
+
+<span class='va'>pc_names</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>world_clean_pca</span><span class='op'>$</span><span class='va'>rotation</span><span class='op'>)</span> <span class='co'>#PC names will create names</span>
+
+<span class='co'>#percent explained dataframe</span>
+<span class='va'>pct_expl_df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>v <span class='op'>=</span> <span class='va'>var_vec</span>, <span class='co'>#variance vector</span>
+                          pct_v <span class='op'>=</span> <span class='va'>var_vec</span> <span class='op'>/</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>var_vec</span><span class='op'>)</span>, <span class='co'>#percent variance (each value divided by the sum of variance vector)</span>
+                          pc <span class='op'>=</span> <span class='fu'><a href='https://forcats.tidyverse.org/reference/fct_inorder.html'>fct_inorder</a></span><span class='op'>(</span><span class='va'>pc_names</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/janitor/man/pipe.html'>%&gt;%</a></span> <span class='co'>#puts it in order of pc_names</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>pct_lbl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>pct_v</span><span class='op'>*</span><span class='fl'>100</span>,<span class='fl'>1</span><span class='op'>)</span>, <span class='st'>"%"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>pct_expl_df</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>pc</span>, y <span class='op'>=</span> <span class='va'>v</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> <span class='co'>#mapping principal components on the x, and on y we are putting the variance (putting percent variance as a label on top)</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_text.html'>geom_text</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>label <span class='op'>=</span> <span class='va'>pct_lbl</span><span class='op'>)</span>, vjust <span class='op'>=</span> <span class='fl'>0</span>, nudge_y <span class='op'>=</span> <span class='fl'>.002</span><span class='op'>)</span> <span class='op'>+</span> <span class='co'>#adding the percent variance label on top (percent of total varience explained by each Principal component), moving the labels up just a bit </span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>'Principal component'</span>, y <span class='op'>=</span> <span class='st'>'Variance Explained'</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Screeplot of Principal Components for Environmental and Climatic Variables"</span>, subtitle <span class='op'>=</span> <span class='st'>"Data compiled and provided by @zander_venter from Google Earth Engine"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="principal-components-analysis_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+</div>
+<p><strong>Figure 2</strong>: Screeplot illustrating the principal components contributions for environmental and climatic variables and the associated variance explained.</p>
+<hr />
+<h2 id="summarytakeaways">3. Summary/Takeaways</h2>
+<ul>
+<li>As illustrated in the biplot, the variables <code>rain_wettestMonth</code>, <code>rain_mean_annual</code> and <code>tree_canopy_cover</code> all seem to be clustered with similar vector distances. This could indicate that these three variables are highly correlated with each other (positive correlation approaching 1)</li>
+<li><code>rain_mean_annual</code> looks to be 90 degrees from <code>cropland_cover</code> which would indicate that these two variables are not correlated (correlation of 0)</li>
+<li><code>wind</code> looks to be 90 degrees from <code>cropland_cover</code> which would indicate that these two variables are not correlated (correlation of 0)</li>
+<li><code>isothermality</code> and <code>cropland_cover</code> have an angle between them nearing 180 degrees and thus one can consider them negatively correlated</li>
+<li><code>wind</code> and <code>tree_canopy_cover</code> have an angle between them nearing 180 degrees and thus one can consider them negatively correlated</li>
+<li><code>cropland_cover</code> and <code>isothermaility</code> have the longest arrows which would indicate a larger variance</li>
+<li><code>wind</code> has the shortest arrow which could indicate a small variance in relation to the variables included</li>
+<li>There seems to be some clustering taking place in relation to tree canopy cover values. Higher values of tree canopy cover towards the direction of <code>rain_wettestMonth</code>, <code>rain_mean_annual</code> and <code>tree_canopy_cover</code>. This would make sense as regions with more rain can sustain more forests. On the right side of the biplot there is somewhat of a vertical cluster across the variables <code>temp_annual_range</code> and <code>cropland_cover</code>. This would also make sense as regions with higher cropland cover would naturally have lower levels of tree canopy cover. And regions with larger ranges of temperature would not be able to sustain a forest as well as those with smaller ranges.</li>
+<li>As visualized in the Screeplot, adding up the variance of the first three principal components explains around 80% of the variance. Due to this one could argue that PC1, PC2 and PC3 cover sufficient varience explained.</li>
+</ul>
+<hr />
+<h2 id="data-citation">4. Data Citation</h2>
+<p>Data source: <a href="https://earthengine.google.com/">Google Earth Engine</a> where publicly available remote sensing datasets have been uploaded. Most of the data is derived by calculating the mean for each country at a reduction scale of about 10km.”</p>
+<h2 id="end-task">END TASK</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

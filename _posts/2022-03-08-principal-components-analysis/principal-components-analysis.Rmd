@@ -1,0 +1,146 @@
+---
+title: "Principal Components Analysis"
+description: |
+  Principal Components Analysis for environmental and climatic variables at the country level with biplots for result interpretation.
+author:
+  - name: Sophia Leiker
+    url: {}
+date: 2022-03-08
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=TRUE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(here)
+library(tidyverse)
+library(janitor)
+library(ggfortify) # For PCA biplot
+library(patchwork)
+ 
+
+library(readxl)
+library(gghighlight) # For useful highlighting
+library(lubridate) # For easier dates & times
+library(plotly) # Interactive graphs
+```
+
+## 1. Introduction
+
+This report will carry out a Principal Components Analysis and will create a biplot for result interpretation. 
+The analysis will be performed on environmental and climatic variables at the country level. 
+
+
+**Data Source:** The data used  was compiled and provided by @zander_venter on Kaggle. “This data is all acquired through [Google Earth Engine](https://earthengine.google.com/) where publicly available remote sensing datasets have been uploaded...Most of the data is derived by calculating the mean for each country at a reduction scale of about 10km.” 
+
+
+```{r}
+# Reading in the data
+world <- read_csv(here("_posts", "2022-03-08-principal-components-analysis","data", "world_env_vars.csv"))
+```
+
+***
+## 2. Principal Component Analysis (PCA)
+
+- Selecting variables of interest
+- Dropping countries with variables that contained NA values
+- Note: Dropping the NA values dropped the total number of countries included in th analysis from 243 to 188. This is done to carry out a more accurage PCA analysis as including countries with many variables with NAs might sway the final biplot (including a country with 3 of 9 vairables as well as a country with 9 of 9 variables would sway the outputs)
+
+```{r}
+#selecting columns of interest for the PCA
+#dropping NAs
+
+world_clean <- world %>% 
+  select("elevation", "cropland_cover", "tree_canopy_cover", "isothermality", "rain_mean_annual", "rain_wettestMonth", "temp_annual_range", "wind", "cloudiness") %>% 
+  drop_na() %>% 
+  rename(Tree_Canopy_Cover_Percent = tree_canopy_cover)
+```
+
+```{r}
+#creating a pca object type (for `prcomp` we can only give it numeric data! need to get rid of things that are characters)
+world_clean_pca <- world_clean %>%
+  scale() %>% #rescaling
+  prcomp() #doing the PCA
+
+```
+
+```{r}
+# See the loadings (weighting for each principal component)
+#world_clean_pca$rotation
+
+#to see the SD
+#world_clean_pca$sdev
+```
+
+
+Creating a bi-plot
+
+```{r}
+autoplot(world_clean_pca,
+         data = world_clean,
+         loadings = TRUE, #to show the arrows
+         colour = "Tree_Canopy_Cover_Percent",
+         loadings.label = TRUE, #to add the labels to the arrows
+         loadings.colour = "black",
+         loadings.label.colour = "black",
+         loadings.label.vjust = -.5) +
+  theme_minimal() +
+  scale_colour_gradient(low = "chocolate2", high = "forestgreen")
+  labs(title = "Biplot Illustrating Eigenvalues for Environmental and Climactic Variables", subtitle = "Data compiled and provided by @zander_venter from Google Earth Engine")
+```
+
+**Figure 1**: Biplot illustrating the eigenvalues (loading variables) for principal component 1 and principal component 2. The color scale represents tree canopy cover with orange dots representing points with low levels of tree canopy cover and forest green representing higher levels of tree canopy cover.
+
+***
+
+## 2. Screeplot
+
+```{r}
+sd_vec <- world_clean_pca$sdev
+var_vec <- sd_vec^2 # Standard deviation is sqrt of variance!
+
+pc_names <- colnames(world_clean_pca$rotation) #PC names will create names
+
+#percent explained dataframe
+pct_expl_df <- data.frame(v = var_vec, #variance vector
+                          pct_v = var_vec / sum(var_vec), #percent variance (each value divided by the sum of variance vector)
+                          pc = fct_inorder(pc_names)) %>% #puts it in order of pc_names
+  mutate(pct_lbl = paste0(round(pct_v*100,1), "%"))
+
+ggplot(pct_expl_df, aes(x = pc, y = v)) + #mapping principal components on the x, and on y we are putting the variance (putting percent variance as a label on top)
+  geom_col() +
+  geom_text(aes(label = pct_lbl), vjust = 0, nudge_y = .002) + #adding the percent variance label on top (percent of total varience explained by each Principal component), moving the labels up just a bit 
+  labs(x = 'Principal component', y = 'Variance Explained') +
+  labs(title = "Screeplot of Principal Components for Environmental and Climatic Variables", subtitle = "Data compiled and provided by @zander_venter from Google Earth Engine")
+
+```
+
+**Figure 2**: Screeplot illustrating the principal components contributions for environmental and climatic variables and the associated variance explained. 
+
+***
+
+## 3. Summary/Takeaways
+
+- As illustrated in the biplot, the variables `rain_wettestMonth`, `rain_mean_annual` and `tree_canopy_cover` all seem to be clustered with similar vector distances. This could indicate that these three variables are highly correlated with each other (positive correlation approaching 1)
+- `rain_mean_annual` looks to be 90 degrees from `cropland_cover` which would indicate that these two variables are not correlated (correlation of 0)
+- `wind` looks to be 90 degrees from `cropland_cover` which would indicate that these two variables are not correlated (correlation of 0)
+- `isothermality` and `cropland_cover` have an angle between them nearing 180 degrees and thus one can consider them negatively correlated 
+- `wind` and `tree_canopy_cover` have an angle between them nearing 180 degrees and thus one can consider them negatively correlated 
+- `cropland_cover` and `isothermaility` have the longest arrows which would indicate a larger variance
+- `wind` has the shortest arrow which could indicate a small variance in relation to the variables included 
+- There seems to be some clustering taking place in relation to tree canopy cover values. Higher values of tree canopy cover towards the direction of `rain_wettestMonth`, `rain_mean_annual` and `tree_canopy_cover`. This would make sense as regions with more rain can sustain more forests. On the right side of the biplot there is somewhat of a vertical cluster across the variables `temp_annual_range` and `cropland_cover`. This would also make sense as regions with higher cropland cover would naturally have lower levels of tree canopy cover. And regions with larger ranges of temperature would not be able to sustain a forest as well as those with smaller ranges. 
+- As visualized in the Screeplot, adding up the variance of the first three principal components explains around 80% of the variance. Due to this one could argue that PC1, PC2 and PC3 cover sufficient varience explained. 
+
+
+***
+
+## 4. Data Citation
+
+Data source: [Google Earth Engine](https://earthengine.google.com/) where publicly available remote sensing datasets have been uploaded. Most of the data is derived by calculating the mean for each country at a reduction scale of about 10km.” 
+
+## END TASK 
+
+
