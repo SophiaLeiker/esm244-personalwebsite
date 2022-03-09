@@ -16,13 +16,14 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-![National Park Service](https://www.nps.gov/articles/images/MackenzieRiver1920x1718_NASA_web.jpg)
 
 **Title:** Biodiversity from Space: How can remote sensing and earth observations be used for biodiversity assessments as an aspect of monitoring ecosystem health?
 
 **Author(s):** Sophia S. Leiker
 
 **Affiliations:** Masters Student of Conservation Planning, Bren School of Environmental Science and Management, University of California Santa Barbara, US
+
+![National Park Service](https://www.nps.gov/articles/images/MackenzieRiver1920x1718_NASA_web.jpg)
 
 ## 1. Introduction
 The continuous global loss of biodiversity has driven the development of methodologies for monitoring biodiversity at large spatial scales. Traditional in-situ biodiversity assessments are often spatially limited, with high costs required to gather sufficient data for analysis (Wang and Garmon 2019). Remote sensing provides the opportunity to advance these assessments through the use of rapidly evolving technologies such as high-resolution hyperspectral satellite sensors, airborne laser scanning (LiDAR), and drone assessments (iVihervaara and Auvinen 2017). The use of these tools allows for large area characterization of biodiversity in a “systematic, repeatable, and spatially exhaustive manner” (Duro, Coops and Wulder 2007). With biodiversity loss recognized as a serious threat to human-wellbeing an ecosystem functioning (Vihervaara, et al. 2017), accurate biodiversity monitoring is crucial to include in policy making at the local, national and international levels. Synchronization of remote sensing science and conservation biology is essential for making well informed environmental management decisions (Pettorelli, Wegmann, et al. 2016). With studies estimating that we are losing from 11,000-58,000 species annually (Pettorelli, Wegmann, et al. 2016), there is the need to assess the current state of the to identify and support coordinated efforts to rapidly scale up. This report will assess how remote sensing can be used for biodiversity assessments by 1) outlining the approaches currently used, 2) identifying the limitations of these methods, and 3) briefly discussing opportunities and future directions.

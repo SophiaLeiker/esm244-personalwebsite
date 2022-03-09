@@ -1,0 +1,133 @@
+---
+title: "Spatial Data Visualization of Oil Spills in California"
+description: |
+  Spatial analysis using `tmap` to create an interactive map showing the location of soil spill events in california using the CA DFW Oil Spill Incident Tracking database and the creation of a finalized static choropleth map uwhere each county depends on the count of inland oil spill events by county.
+author:
+  - name: Sophia Leiker
+    url: {}
+date: 2022-03-08
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=TRUE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(spatstat)
+library(maptools) 
+# library(sp)
+library(raster) ### BEFORE tidyverse! b/c select()
+library(tidyverse)
+library(here)
+library(sf)
+library(tmap)
+library(gstat)
+library(stars)
+library(janitor)
+```
+
+![Sky News: California Oil Spill 2021](https://e3.365dm.com/21/10/2048x1152/skynews-oil-spill-california_5542731.jpg)
+
+## 1. Introduction
+
+This report will carry out a spatial analysis using `tmap` to create an interactive map showing the location of soil spill events in california using the CA DFW Oil Spill Incident Tracking database. 
+
+This report will also produce the creation of a finalized static choropleth map using `ggplot` in which the fill color for each county depends on the count of inland oil spill events by county for the 2008 oil spill data. 
+
+**Data Source:** The data used for analysis is from the [CA DFW Oil Spill Incident Tracking dataset](https://map.dfg.ca.gov/metadata/ds0394.html). The database system is designed to provide OSPR with quantified statistical data on oil spill response by OSPR field responders. The OSPR Incident Tracking Database System project was initiated to provide OSPR with oil spill incident data for statistical evaluation and justification for program planning, drills and exercise training and development, legislative analysis, budget preparation, to inform and educate the public and analyze OSPR's overall spill preparedness and response performance. An "incident", for purposes of this database, is "a discharge or threatened discharge of petroleum or other deleterious material into the waters of the state."
+
+Data can also be downloaded from the [State of California Geoportal](https://gis.data.ca.gov/datasets/7464e3d6f4924b50ad06e5a553d71086_0/explore?location=37.001352%2C-119.422009%2C6.48&showTable=true)
+
+
+```{r}
+# Reading in the data
+oil <- read_sf(here("_posts", "2022-03-08-spatial-data-visualization-of-oil-spills-in-california","data", "Oil_Spill_Incident_Tracking_[ds394]", "Oil_Spill_Incident_Tracking_[ds394].shp"))
+
+# Check the projection
+#st_crs(oil) 
+
+```
+
+
+```{r}
+
+# Read in the CA county data (TIGER shapefile):
+ca_counties_sf <- read_sf(here("_posts","2022-03-08-spatial-data-visualization-of-oil-spills-in-california","data","CA_counties"), layer = "CA_Counties_TIGER2016") %>% 
+  janitor::clean_names() %>% 
+  select(name)
+
+# Check the projection
+#st_crs(ca_counties_sf) 
+
+```
+
+***
+
+## 2. Plotting Oil Data on CA Counties
+
+```{r}
+#testing a plot to make sure the plot runs
+#ggplot() +
+ # geom_sf(data = ca_counties_sf) +
+  #geom_sf(data = oil)
+```
+
+
+
+```{r}
+# TSetting Tmap to plot:
+tmap_mode("view")
+
+#Mapping with the oil data and the county data
+tm_shape(ca_counties_sf) +
+  tm_polygons(alpha = 0) +
+  tm_shape(oil) +
+  tm_dots(col = "navyblue") +
+  tm_layout(title= 'Oil Spills in California from the CA DFW Oil Spill Incident Tracking')
+```
+
+**Figure 1**: Figure 1 illustrates the distribution of oil spill events indicated in dark blue from the [CA DFW Oil Spill Incident Tracking dataset](https://map.dfg.ca.gov/metadata/ds0394.html) across California. California county boundaries are indicated in black
+
+***
+
+## 3. Cholopleth Map of Inland Oil Spills by CA County
+
+Wangling data
+
+```{r}
+oil_inland <- oil %>% 
+  filter(INLANDMARI == "Inland") #filtering to keep inland
+
+oil_inland_county <- ca_counties_sf %>%  #joining the datasets together
+  st_join(oil_inland)
+
+oil_counts <- oil_inland_county %>% #group by county for total number of oil spills
+  group_by(name) %>% 
+  summarize(Total_Spills = sum(!is.na(DFGCONTROL)))
+  
+``` 
+
+
+Oil Spill Events by County in 2008
+
+```{r}
+
+ggplot() +
+  geom_sf(data = oil_counts, aes(fill = Total_Spills)) +
+  theme_minimal() +
+  labs(title = "Oil Spill Events by California County in 2008", subtitle = "Data from: CA DFW Oil Spill Incident Tracking dataset") +
+  scale_fill_gradientn(colors = c("purple4", "firebrick2", "gold"))
+  
+
+```
+
+**Figure 2** : Total oil spills in 2008 per California County. A higher number of spills is indicated by yellow, a lower number of spills is indicated by purple. 
+
+***
+
+## 4. Data Citation
+
+Data source:  Mark Lampinen, Department of Fish and Game, Office of Spill Prevention and Response, 916 322-4777 [CA DFW Oil Spill Incident Tracking dataset](https://map.dfg.ca.gov/metadata/ds0394.html)
+
+## END TASK 
