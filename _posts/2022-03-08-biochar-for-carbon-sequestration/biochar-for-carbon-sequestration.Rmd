@@ -64,18 +64,31 @@ Citation: Li, S., Ma, Q., & Zhou, C. (2021). Applying biochar under topsoil faci
 
 ## Works Cited 
 References
+
 Bista, P., Machado, R., & Pritchett, S. (2019). Biochar Effects on Soil Properties and Wheat Biomass vary with Fertility Management. Agronomy, 9(263). https://doi.org/10.3390/agronomy9100623
+
 Cho, R. (2018, February 21). Can Soil Help Combat Climate Change? State of the Planet. Retrieved February 21, 2022, from https://news.climate.columbia.edu/2018/02/21/can-soil-help-combat-climate-change/
+
 Fuss, S., & Lamb, W. (2018). Negative emissions—Part 2: Costs, potentials and side effects. Environ. Res, 13(063002). https://iopscience.iop.org/article/10.1088/1748-9326/aabf9f
+
 Guo, M., He, Z., & Uchimiya, S. M. (Eds.). (2016). Agricultural and Environmental Applications of Biochar: Advances and Barriers. Wiley.
+
 Lehmann, J. (2007). A handful of carbon. Nature, 447(447), 143-144. https://www.nature.com/articles/447143a
+
 Lehmann, J., Gaunt, J., & Rondon, M. (2006). Bio-char Sequestration in Terrestrial Ecosystems – A Review. Mitig Adapt Strat Glob Change, 11(403-427). https://doi.org/10.1007/s11027-005-9006-5
+
 Levitan, D. (2010, December 9). Refilling the Carbon Sink: Biochar's Potential and Pitfalls. Yale E360. Retrieved February 20, 2022, from https://e360.yale.edu/features/refilling_the_carbon_sink_biochars_potential_and_pitfalls
+
 Li, S., Ma, Q., & Zhou, C. (2021). Applying biochar under topsoil facilitates soil carbon sequestration: A case study in a dryland agricultural system on the Loess Plateau. Geoderma, 403(115186). https://doi.org/10.1016/j.geoderma.2021.115186
+
 Njunge, L. (2012). Enhancement Of Colonisation Of Soybean Roots By Arbuscular Mycorrhizal Fungi Using Vermicompost and Biochar. University of Nairobi, Reg Number: I575/84397, NA. http://erepository.uonbi.ac.ke/bitstream/handle/11295/105433/Njunge_Enhancement%20Of%20Colonisation%20Of%20Soybean%20Roots%20By%20Arbuscular%20Mycorrhizal%20Fungi%20Using%20Vermicompost%20And%20Biochar.pdf?sequence=1
+
 Shiralian, M. (2016, June 14). Biochar offers many environmental benefits. Environmental Science & Engineering Magazine. Retrieved February 20, 2022, from https://esemag.com/hazmat-remediation/biochar/
+
 Sorensen, R., & Lamb, M. (2018). Return on investment from biochar application. Crop, Forage & Turfgrass Management, 4(1), 1-6. https://doi.org/10.2134/cftm2018.02.0008
+
 Verheijen, F., Jeffery, S., & Bastos, A. (2010). Biochar application to soils. A critical scientific review of effects on soil properties, processes, and functions. EUR, 24099(162), NA. https://www.academia.edu/download/9425519/biochar.pdf
+
 Yaashikaa, P., Kumar, P., & Varjani, S. (2020). A critical review on the biochar production techniques, characterization, stability and applications for circular bioeconomy. Biotechnology Reports, 28(e00570), . ElSEVIER. https://doi.org/10.1016/j.btre.2020.e00570
 
 

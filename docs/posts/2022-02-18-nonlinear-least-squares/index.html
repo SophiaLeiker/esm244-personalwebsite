@@ -118,7 +118,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/lizard.csv","nonlinear-least-squares_files/anchor-4.2.2/anchor.min.js","nonlinear-least-squares_files/bowser-1.9.3/bowser.min.js","nonlinear-least-squares_files/distill-2.2.21/template.v2.js","nonlinear-least-squares_files/figure-html5/unnamed-chunk-18-1.png","nonlinear-least-squares_files/figure-html5/unnamed-chunk-9-1.png","nonlinear-least-squares_files/header-attrs-2.11/header-attrs.js","nonlinear-least-squares_files/jquery-3.6.0/jquery-3.6.0.js","nonlinear-least-squares_files/jquery-3.6.0/jquery-3.6.0.min.js","nonlinear-least-squares_files/jquery-3.6.0/jquery-3.6.0.min.map","nonlinear-least-squares_files/kePrint-0.0.1/kePrint.js","nonlinear-least-squares_files/lightable-0.0.1/lightable.css","nonlinear-least-squares_files/popper-2.6.0/popper.min.js","nonlinear-least-squares_files/tippy-6.2.7/tippy-bundle.umd.min.js","nonlinear-least-squares_files/tippy-6.2.7/tippy-light-border.css","nonlinear-least-squares_files/tippy-6.2.7/tippy.css","nonlinear-least-squares_files/tippy-6.2.7/tippy.umd.min.js","nonlinear-least-squares_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["data/lizard.csv","nonlinear-least-squares_files/anchor-4.2.2/anchor.min.js","nonlinear-least-squares_files/bowser-1.9.3/bowser.min.js","nonlinear-least-squares_files/distill-2.2.21/template.v2.js","nonlinear-least-squares_files/figure-html5/unnamed-chunk-10-1.png","nonlinear-least-squares_files/figure-html5/unnamed-chunk-18-1.png","nonlinear-least-squares_files/figure-html5/unnamed-chunk-19-1.png","nonlinear-least-squares_files/figure-html5/unnamed-chunk-9-1.png","nonlinear-least-squares_files/header-attrs-2.11/header-attrs.js","nonlinear-least-squares_files/jquery-3.6.0/jquery-3.6.0.js","nonlinear-least-squares_files/jquery-3.6.0/jquery-3.6.0.min.js","nonlinear-least-squares_files/jquery-3.6.0/jquery-3.6.0.min.map","nonlinear-least-squares_files/kePrint-0.0.1/kePrint.js","nonlinear-least-squares_files/lightable-0.0.1/lightable.css","nonlinear-least-squares_files/popper-2.6.0/popper.min.js","nonlinear-least-squares_files/tippy-6.2.7/tippy-bundle.umd.min.js","nonlinear-least-squares_files/tippy-6.2.7/tippy-light-border.css","nonlinear-least-squares_files/tippy-6.2.7/tippy.css","nonlinear-least-squares_files/tippy-6.2.7/tippy.umd.min.js","nonlinear-least-squares_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2106,6 +2106,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <div class="d-article">
+<figure>
+<img src="https://jornada.nmsu.edu/files/img/slider/k11299-1-lg.jpg" alt="Jornada Experimental Range: New Mexico University" /><figcaption aria-hidden="true">Jornada Experimental Range: New Mexico University</figcaption>
+</figure>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>set</span><span class='op'>(</span>echo <span class='op'>=</span> <span class='cn'>TRUE</span>, warning <span class='op'>=</span> <span class='cn'>FALSE</span>, message <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
@@ -2156,10 +2159,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </code></pre>
 </div>
 </div>
-Running linear model
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>my_guess_model</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>log_weight</span> <span class='op'>~</span> <span class='va'>log_length</span>, data <span class='op'>=</span> <span class='va'>palmetto_log</span><span class='op'>)</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Linear model</span>
+<span class='va'>my_guess_model</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>log_weight</span> <span class='op'>~</span> <span class='va'>log_length</span>, data <span class='op'>=</span> <span class='va'>palmetto_log</span><span class='op'>)</span> 
 </code></pre>
 </div>
 </div>
@@ -2169,19 +2172,18 @@ Running linear model
 <li>Using <code>coefficients</code> function
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r">
-<code class="sourceCode r"><span class="va">coef</span> <span class="op">&lt;-</span> <span class="fu"><a href='https://rdrr.io/r/stats/coef.html'>coefficients</a></span><span class="op">(</span><span class="va">my_guess_model</span><span class="op">)</span></li>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>coef</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/coef.html'>coefficients</a></span><span class='op'>(</span><span class='va'>my_guess_model</span><span class='op'>)</span>
+<span class='va'>my_guess_model_clean</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>my_guess_model</span><span class='op'>)</span>
+</code></pre>
+</div></li>
 </ul>
-<span class="co">#Cleaning up the model so I can pull out the coefficients easier </span> <span class="va">my_guess_model_clean</span> <span class="op">&lt;-</span> <span class="fu"><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class="op">(</span><span class="va">my_guess_model</span><span class="op">)</span> </code>
-</pre>
 </div>
-</div>
-<p><strong>Coefficient Output</strong></p>
+<p>Coefficient Output</p>
 <ul>
 <li>The intercept of <code>my_guess_model</code> is -8.475</li>
 <li>The log_length of <code>my_guess_model</code> is 2.537</li>
 </ul>
-Creating a function for the equation listed - Inputs are a, sv_length, b (a and b are coefficients)
+<p>Creating a function for the equation listed - Inputs are a, sv_length, b (a and b are coefficients)</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>weight_function</span><span class='op'>&lt;-</span><span class='kw'>function</span><span class='op'>(</span><span class='va'>a</span>,<span class='va'>sv_length</span>,<span class='va'>b</span><span class='op'>)</span><span class='op'>{</span>

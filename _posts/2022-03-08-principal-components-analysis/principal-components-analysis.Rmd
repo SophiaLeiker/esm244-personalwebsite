@@ -1,5 +1,5 @@
 ---
-title: "Principal Components Analysis"
+title: "Principal Components Analysis: Tree Canopy Cover Versus Other Climactic Variables"
 description: |
   Principal Components Analysis for environmental and climatic variables at the country level with biplots for result interpretation.
 author:
@@ -11,6 +11,7 @@ output:
     self_contained: false
 ---
 
+![Photo: Gilbert Experience](https://www.gilbertexperience.com/wp-content/uploads/2020/11/cover3.jpg)
 
 ```{r setup, include=TRUE, warning=FALSE, message=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
@@ -27,6 +28,7 @@ library(gghighlight) # For useful highlighting
 library(lubridate) # For easier dates & times
 library(plotly) # Interactive graphs
 ```
+
 
 ## 1. Introduction
 
