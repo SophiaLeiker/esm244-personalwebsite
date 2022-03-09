@@ -1,0 +1,83 @@
+---
+title: "Biochar for Carbon Sequestration"
+description: |
+  The use of biochar for soil carbon sequesrtration and increased crop yields have gained increased attention. This report dives into the science of biochar and it's potential to increase overal carbon uptake and storage.
+author:
+  - name: Sophia Leiker
+    url: {}
+date: 2022-03-08
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+![Regeneration International](https://regenerationinternational.org/wp-content/uploads/2018/05/biochar.jpg)
+
+## 1.  Introduction: 
+
+Biochar increases carbon sequestration through a process of heating plant biomass without oxygen (also known as pyrolysis) to create a charcoal-like residue that can then be applied to agricultural lands increasing carbon uptake and storage while also improving soil fertility and water holding capacity (Verheijen et al., 2010). Increased attention has been directed towards the use of biochar due to its “low risk of rapid or large-scale leakage” (Lehmann, 2007). This means that carbon biochar is stored in a stable form, separating this technique from others which have high reversal risks from wildfires, tillage or biomass harvest. Biochar can improve carbon sequestration in two ways 1) reducing biomass CO2 emissions that otherwise would be released through decomposition or combustion, 2) providing a surface for soil carbon to be held in a more stable form, resistant to decay from soil microbes. 
+
+## 2. How does it work: Altering the Carbon Cycle, Altering Soil Carbon
+
+To create biochar, organic waste “such as wood chips, agricultural byproducts or switchgrass” (Levitan, 2010 ) is burned at temperatures 250−900 °C (Yaashikaa et al., 2020) in anaerobic or extremely low oxygen conditions (Figure 1, Figure 2). This alters the carbon cycle in that pyrolysis takes ~50% of the biomass carbon that would have otherwise been released as CO2 through combustion or decomposition (Lehmann et al., 2006), and turns it into more stable carbon structures that remain sequestered much longer (Njunge, 2012, Figure 3). Residence times for wood biochar range from “100s to 1,000s of years, which is approximately 10-1,000 times longer than residence times of most soil organic matter” (Verheijen et al., 2010). Additionally, biochar provides an opportunity for organic matter to adsorb to its surface. This shifts bioavailable “labile carbon” to “recalcitrant carbon” that is resistant to decay, preventing soil microbes from being able to consume this carbon. Due to this, there is an increase in overall soil carbon storage. The magnitude of impact biochar has on soil functions depends on factors such as “chemical composition, surface chemistry, particle/pore size distribution” (Verheijen et al., 2010), thus further study is needed for optimization.
+
+## 3. Cost for Application of Biochar
+
+Studies have shown that biochar should be applied at levels no higher than 10 tons per acre for field crops, and wood biochar costs around $350/ton (Bista et al., 2019). Cost for application varies, but generally falls above $8/ton with total application costs ranging from $2,900-$17,900 per acre depending on total mass of the biochar applied (Sorensen & Lamb, 2018). Each application can last up to 10 years depending on environmental conditions. Biochar as a negative emission technology has been listed at 0.5–2 Gt/CO2 yr−1 for sequestration potential with a cost of $30–120 per ton of CO2 sequestered (Fuss & Lamb, 2018). 
+
+## 4. Advantages and Disadvantages
+Advantages:  The application of biochar can be integrated into current farming techniques (fertilizer or manure applications) at the local or field scale without the need for additional equipment (Lehmann, 2007). On top of influencing the carbon sequestration, biochar has also been shown to increase soil functioning and restore degraded soils, “biochar can improve the structure and fertility of soils, thereby improving biomass production… [it] enhances the retention and therefore efficiency of fertilizers” (Lehmann, 2007). Studies have also shown that biochar impacts other biogeochemical cycles such as increasing Nitrogen retention in soils (Steiner et al, 2008) which may help reduce impact of fertilizer runoff such as eutrophication. Biochar can also “moderate the pH, or acidity, of the soils” due to its alkalinity (Levitan, 2010) and can act to neutralize acid rain. Resource-wise, the advantage of biochar is that there is sufficient biomass to carry out this process, from timber residues (3.5 tonnes biomass per ha/year on 20 million ha), fast growing vegetation on idle cropland (20 tonnes biomass per ha/year on 30 million ha), and crop residues (5.5 tonnes biomass per ha/year for 120 million ha) (Lehmann, 2007). Finally, the technology to create and apply biochar is already mature and ready to be scaled up, lowering the barrier to immediate use.
+Disadvantages/Challenges: A major challenge is ensuring biochar is sustainably produced using a closed loop system. If leakage takes place during pyrolysis, the sequestration potential of applying biochar will be offset by the inputs needed to create it. An additional challenge is further understanding its long term sequestration potential  “The precise duration of biochar's storage time is under debate, with opinions ranging from millennial… to centennial timescales” (Lehmann, 2007). These ranges would significantly impact estimates around soil carbon potential. Finally, in some studies, it was shown that applying biochar actually increased CO2 emissions due to soil surface environmental disturbance factors with the application resulting in a net carbon source to the atmosphere rather than net carbon sink (Li et al., 2021). This question is crucial to determine where the application of biochar might result in a carbon source versus carbon sink. A final disadvantage is that soils have a carbon storage capacity that could be increasing with biochar applications, but only up to a saturation point where soils hit their maximum and cannot hold any more Carbon. 
+
+## 5. Case Study: Biochar Facilitating Carbon Sequestration on the Loess Plateau
+In North Central China a 16 month field experiment was carried out to assess the impact of biochar application in a dryland agricultural system (Li et al., 2021). Historically, the site implemented a corn/wheat system using tillage practices on a silt clay soil. Biochar derived from apple branches was applied at 3 different soil depths (0-10cm, 10-20cm, 0-20cm). Results revealed that the application of biochar inhibited microbial activity  which “increased the SOC [soil organic carbon], C:N ratio and DOC in the 0–10 cm soil” (Li et al., 2021). The difference illustrated in Figure 4 shows that the control soil (no biochar) had a soil organic carbon value of 6.73 g/kg while the soil with biochar application (0-10cm) had a value of 13.13g/kg (Figure 4). 
+
+## 6. Environmental Justice/Policy and Econ aspects
+The benefits of biochar extend beyond the public good of carbon sequestration as increased soil water retention and a moderation of soil pH can increase crop yields. “Biochar also enriches soil, which improves food security in developing countries and crop production almost anywhere” (Levitan, 2010). These increased yield benefits can help farmers in lower income countries who may already be dealing with crop failure and thus food shortages. The benefits of biochar on water retention especially apply to regions which will face more frequent droughts due to changing precipitation patterns driven by climate change. In order for the benefits of biochar to extend beyond developed nations, equity in access to biochar resources must be considered as many who need it most, may not have the finances to purchase it. 
+
+##7. Conclusion and Recommendations
+
+With the earth's soils containing about three times the amount of carbon in the atmosphere and four times the amount stored in living matter (Cho, 2018), biochar should be considered a small piece to a much larger puzzle of sequestration tools. Biochar stands out as a low risk strategy in relation to other sequestration options with the assurance that “Once biochar is incorporated into soil, it is difficult to imagine any incident or change in practice that would cause a sudden loss of stored carbon” (Lehmann, 2007). With increased crop yield due to heightened water retention and soil functioning, this solution can also support other sustainable development goals such as increasing food security. To encourage adoption, financial incentive structures must be in place to provide access to small landholders who may not have the capital up front to invest in biochar applications. One method to overcome this would be to connect small farmers with voluntary carbon markets to provide them the funding through carbon offset payouts. This would require standards to be created for monitoring, reporting, and verifying biochar and carbon sequestration metrics. Additionally, the need for sustainable biochar production is critical. If the process used to create the biochar is not up to certain standards, there is the potential for biochar to be carbon neutral or carbon positive rather than carbon negative. Finally, further studies are needed to understand how to optimize biochar application on a range of soil types, climate zones, and croplands to maximize its effect. 
+
+## FIGURES
+Figure 1: How biochar is made, its potential feedstocks and many uses
+Citation: Shiralian, M. (2016, June 14). Biochar offers many environmental benefits. Environmental Science & Engineering Magazine. Retrieved February 20, 2022, from https://esemag.com/hazmat-remediation/biochar/
+
+
+
+## Figure 2: Creating Biochar
+Citation: Yaashikaa, P., Kumar, P., & Varjani, S. (2020). A critical review on the biochar production techniques, characterization, stability and applications for circular bioeconomy. Biotechnology Reports, 28(e00570), . ElSEVIER. https://doi.org/10.1016/j.btre.2020.e00570
+
+
+## Figure 3: Carbon Cycle Vs Biochar Cycle
+Citation: Njunge, L. (2012). Enhancement Of Colonisation Of Soybean Roots By Arbuscular Mycorrhizal Fungi Using Vermicompost and Biochar. University of Nairobi, Reg Number: I575/84397. http://erepository.uonbi.ac.ke/bitstream/handle/11295/105433/Njunge_Enhancement%20Of%20Colonisation%20Of%20Soybean%20Roots%20By%20Arbuscular%20Mycorrhizal%20Fungi%20Using%20Vermicompost%20And%20Biochar.pdf?sequence=1 
+
+## Figure 4: Case Study, Increased Soil Organic Carbon with biochar Application
+Citation: Li, S., Ma, Q., & Zhou, C. (2021). Applying biochar under topsoil facilitates soil carbon sequestration: A case study in a dryland agricultural system on the Loess Plateau. Geoderma, 403(115186). https://doi.org/10.1016/j.geoderma.2021.115186
+
+
+
+## Works Cited 
+References
+Bista, P., Machado, R., & Pritchett, S. (2019). Biochar Effects on Soil Properties and Wheat Biomass vary with Fertility Management. Agronomy, 9(263). https://doi.org/10.3390/agronomy9100623
+Cho, R. (2018, February 21). Can Soil Help Combat Climate Change? State of the Planet. Retrieved February 21, 2022, from https://news.climate.columbia.edu/2018/02/21/can-soil-help-combat-climate-change/
+Fuss, S., & Lamb, W. (2018). Negative emissions—Part 2: Costs, potentials and side effects. Environ. Res, 13(063002). https://iopscience.iop.org/article/10.1088/1748-9326/aabf9f
+Guo, M., He, Z., & Uchimiya, S. M. (Eds.). (2016). Agricultural and Environmental Applications of Biochar: Advances and Barriers. Wiley.
+Lehmann, J. (2007). A handful of carbon. Nature, 447(447), 143-144. https://www.nature.com/articles/447143a
+Lehmann, J., Gaunt, J., & Rondon, M. (2006). Bio-char Sequestration in Terrestrial Ecosystems – A Review. Mitig Adapt Strat Glob Change, 11(403-427). https://doi.org/10.1007/s11027-005-9006-5
+Levitan, D. (2010, December 9). Refilling the Carbon Sink: Biochar's Potential and Pitfalls. Yale E360. Retrieved February 20, 2022, from https://e360.yale.edu/features/refilling_the_carbon_sink_biochars_potential_and_pitfalls
+Li, S., Ma, Q., & Zhou, C. (2021). Applying biochar under topsoil facilitates soil carbon sequestration: A case study in a dryland agricultural system on the Loess Plateau. Geoderma, 403(115186). https://doi.org/10.1016/j.geoderma.2021.115186
+Njunge, L. (2012). Enhancement Of Colonisation Of Soybean Roots By Arbuscular Mycorrhizal Fungi Using Vermicompost and Biochar. University of Nairobi, Reg Number: I575/84397, NA. http://erepository.uonbi.ac.ke/bitstream/handle/11295/105433/Njunge_Enhancement%20Of%20Colonisation%20Of%20Soybean%20Roots%20By%20Arbuscular%20Mycorrhizal%20Fungi%20Using%20Vermicompost%20And%20Biochar.pdf?sequence=1
+Shiralian, M. (2016, June 14). Biochar offers many environmental benefits. Environmental Science & Engineering Magazine. Retrieved February 20, 2022, from https://esemag.com/hazmat-remediation/biochar/
+Sorensen, R., & Lamb, M. (2018). Return on investment from biochar application. Crop, Forage & Turfgrass Management, 4(1), 1-6. https://doi.org/10.2134/cftm2018.02.0008
+Verheijen, F., Jeffery, S., & Bastos, A. (2010). Biochar application to soils. A critical scientific review of effects on soil properties, processes, and functions. EUR, 24099(162), NA. https://www.academia.edu/download/9425519/biochar.pdf
+Yaashikaa, P., Kumar, P., & Varjani, S. (2020). A critical review on the biochar production techniques, characterization, stability and applications for circular bioeconomy. Biotechnology Reports, 28(e00570), . ElSEVIER. https://doi.org/10.1016/j.btre.2020.e00570
+
+
+
+
