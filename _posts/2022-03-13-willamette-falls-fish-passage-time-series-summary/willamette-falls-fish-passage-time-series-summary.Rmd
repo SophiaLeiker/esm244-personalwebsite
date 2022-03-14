@@ -1,0 +1,187 @@
+---
+title: "Willamette Falls: Fish Passage Time Series Summary"
+description: |
+  This report explores time series assessments of adult passage of coho, jack coho, and steelhead salmon in Willamette Falls.
+author:
+  - name: Sophia Leiker
+    url: {}
+date: 2022-03-13
+output:
+  distill::distill_article:
+    self_contained: false
+    theme: darkly
+    code_folding: See code here
+---
+
+
+```{r setup, include=TRUE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+library(here)
+library(janitor)
+library(lubridate)
+library(tsibble)
+library(feasts)
+library(slider)
+
+```
+
+
+
+## 1. Introduction {.tabset .tabset-pills}
+
+**Summary** This report will explore *time series assessments* of adult passage of coho, jack coho, and steelhead salmon in Willamette Falls. Willamette Falls is a natural waterfall on the Willamette River between Oregon City and West Linn, Oregon, in the United States and has an abundance of salmon.
+
+![Willamette Falls, Photo credit: Willamette Falls Trust ](https://images.squarespace-cdn.com/content/v1/5c33c4d3b1059881395762dd/1636003105157-PSJVWMNO33XHWUW3Z9R3/20211029_125404.jpg?format=1500w)
+
+
+#### Data
+
+**Data Source:** The data used for analysis is from the [Columbia River DART Real Time Data Acess](http://www.cbr.washington.edu/dart/query/adult_graph_text). The database system is developed and maintained by the University of Washington School of Aquatic & Fish Sciences Columbia Basin Research Center. 
+
+DART(Data Access in Real Time) provides interactive, timely access to integrated Columbia Basin salmonid, environmental, hydrosystem operations, riverine, ocean and climatic data resources. Includes raw and summary data, aggregate data analysis, stock status, ESU populations, conversion rates and fish-environment exposure information. All resources are publicly available.
+
+#### Location of Willamette Falls
+
+![Figure 1: Location of Willamette Falls, Photo Credit: San Fransisco Chronicle](https://s.hdnux.com/photos/01/00/14/06/16826794/5/1200x0.jpg)
+
+
+```{r}
+# Reading in the data
+fish <- read_csv(here("_posts","2022-03-13-willamette-falls-fish-passage-time-series-summary", "data", "willamette_fish_passage.csv")) %>% 
+  clean_names()
+```
+
+```{r}
+#updating dataframe
+fish_clean <- fish %>% 
+  mutate(date = lubridate::mdy(date)) %>% #convert date to date
+  as_tsibble(key = NULL, index = date) %>% 
+  select(date, coho, jack_coho, steelhead)
+```
+
+```{r}
+#Converting NAs to 0
+fish_clean[is.na(fish_clean)] <- 0 
+
+fish_longer <- fish_clean %>% 
+  pivot_longer(cols = c("coho", "jack_coho", "steelhead"), values_to = "count")
+```
+
+```{r}
+# creating a longer df with single observations for each of the fish species of interest
+fish_longer <- fish_clean %>% 
+  pivot_longer(cols = 2:4, names_to = "species", values_to = "count")
+
+#Use index_by() to aggregate time series by increments
+fish_monthly <- fish_longer %>% 
+  index_by(month = ~yearmonth(.)) %>%
+  group_by(species) %>%
+  summarize(monthly_total = sum(count, na.rm = TRUE))
+
+#Pull out year add to new column
+
+fish_monthly <- fish_monthly %>% 
+  mutate(year = year(month))
+```
+
+
+### Time Series
+
+#### Adult passage for Coho, Jack Coho, and Steelhead 
+
+```{r}
+coho <- fish_longer %>% 
+  filter(species == "coho")
+
+jack <- fish_longer %>% 
+  filter(species == "jack_coho")
+
+steelhead <- fish_longer %>% 
+  filter(species == "steelhead")
+
+#coho
+ggplot(data = coho, aes(x=date, y = count)) +
+  geom_line(size = 0.5, alpha = 0.8, colour = "blue") +
+  theme_minimal() +
+  labs(x = "Year", y = "Fish counts per day", title = "Coho Fish Counts", subtitle = "Data From: Columbia River DART Real Time Data Acess")
+```
+
+**Figure 2:** Time series of Coho counts by month at the Willamette Falls fish ladder
+
+```{r}
+#jack coho
+ggplot(data = jack, aes(x=date, y = count)) +
+  geom_line(size = 0.5, alpha = 0.8, colour = "forestgreen") +
+  theme_minimal() +
+  labs(x = "Year", y = "Fish counts per day", title = "Jack Coho Fish Counts", subtitle = "Data From: Columbia River DART Real Time Data Acess")
+```
+
+**Figure 3:** Time series of Jack Coho counts by month at the Willamette Falls fish ladder
+
+```{r}
+#jack coho
+ggplot(data = steelhead, aes(x=date, y = count)) +
+  geom_line(size = 0.5, alpha = 0.8, colour = "darkorange2") +
+  theme_minimal() +
+  labs(x = "Year", y = "Fish counts per day", title = "Steelhead Fish Counts", subtitle = "Data From: Columbia River DART Real Time Data Acess")
+
+```
+
+**Figure 4:** Time series of Jack Steelhead counts by month at the Willamette Falls fish ladder
+
+**Summary** 
+
+- During the monitoring years visualized here, overall steelhead had the largest abundance over both coho and jack coho
+- Cojo had fairly low abundance (under 500 fish counts per day) in the years 2001 to 2009, but after 2009 their abundance had two notable spikes 
+- Visually there seems to be seasonality in when fish pass through this fish ladder. Cojo and jack cojo had abundance spikes later in the calendar year, while steelhead had abundance spikes earlier in the calendar year
+
+### Season Plots 
+
+```{r}
+fish_longer %>% 
+  gg_season(y = count) +
+  labs(x = "Month", y = "Fish Counts") +
+  theme_minimal() +
+  labs(title = "Seaon Plot of Fish Counts by Month", subtitle = "Data From: Columbia River DART Real Time Data Acess")
+  
+```
+
+**Figure 5**: Season plots of fish count by month for coho, jack coho and steelhead. Horizontal axis represents months with each of the different colored lines representing data for an individual year
+
+**Summary and Takeaways**
+
+- Seasonal patterns can be observed across all three species with more distinct seasonality for coho and jack coho represented by clearly defined spikes in their season plot
+- Coho and jack coho pass the falls at similar times (around the month of October), while steelhead have a longer, more spread out seasonal passage ranging from February to late summer.
+- While is is visually hard to differentiate years for steelhead, coho seemed to had higher abundance passing through the falls in the years 2009 and 2010 as seen by the much higher spike in their season plot.
+
+
+### Annual Totals
+
+```{r}
+fish_year <- fish_longer %>% 
+  index_by(year = ~year(.)) %>% 
+  group_by(species) %>% 
+  summarize(yearly_count = sum(count)) %>% 
+  mutate(species = case_when(
+    species == "coho" ~ "Coho",
+    species == "jack_coho" ~ "Jack Coho", 
+    species == "steelhead" ~ "Steelhead"))
+
+ggplot(data = fish_year, aes(x = year, y = yearly_count, color = species)) +  
+  geom_line(size = 1.5) +
+  scale_x_continuous(n.breaks =10) +
+  theme_minimal() +
+  scale_color_manual(values = c("blue", "forestgreen", "darkorange2")) +
+  labs(x = "Year", y = "Count Total per Year", title = "Total Fish Counts by Year", subtitle = "Data From: Columbia River DART Real Time Data Acess")
+```
+
+**Figure 6**: Total counts of coho, jack coho and steelhead passing through Wilamette Falls per year. The blue line represents coho counts, green line represents jack coho counts, and orange line represents steelhead counts.
+
+**Summary and Takeaways**
+
+- Jack Coho populations seem to be relatively stable, with lower overall abundance compared to cojo and steelhead population
+- Coho populations were slightly above jack coho populations from 200 to 2008, but after 2008 there was a clear spike in the number of fish flowing through Willamete Falls 
+- Steelhead abundance was fairly volitile from 200-2005 with spikes reaching up to the 50,000s, but overall have dropped in numbers to lower levels from 2005 onward. From 2009-2010 there seems to be a positive spike in reported steehead. 
+
